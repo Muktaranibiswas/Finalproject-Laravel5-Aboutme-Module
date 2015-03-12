@@ -1,0 +1,55 @@
+
+    <link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+    <!--for outside colour   <link href="../../assets/admin/layout3/css/layouts.css" rel="stylesheet" type="text/css">-->
+        <div class="portlet light">
+
+            <div class="portlet-body">
+                <table class="table table-hover table-striped table-bordered">
+                    <tr>
+                        <td>
+                            Long Modals
+                        </td>
+                        <td>
+                            <a class="btn default" data-target="#long" data-toggle="modal">
+                                View Demo </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+<div id="long" class="modal fade modal-scroll" tabindex="-1" data-replace="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title">A Fairly Long Modal</h4>
+    </div>
+    <div class="modal-body">
+        <img style="height: 800px" src="http://i.imgur.com/KwPYo.jpg">
+    </div>
+    <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js" type="text/javascript"></script>
+
+<script>
+    jQuery(document).ready(function() {
+        // initiate layouts and plugins
+        Metronic.init(); // init metronic core components
+        Layout.init(); // init current layouts
+        Demo.init(); // init demo features
+        UIExtendedModals.init();
+    });
+</script>

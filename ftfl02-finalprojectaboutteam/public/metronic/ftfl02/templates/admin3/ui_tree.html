@@ -1,0 +1,141 @@
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/jstree/dist/themes/default/style.min.css"/>
+
+<link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+
+        <div id="tree_with_context_menu" class="tree-demo">
+
+        </div>
+
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jstree/dist/jstree.min.js"></script>
+
+
+<script>
+
+
+
+var UITree = function () {
+
+    var ajaxTreeSample = function() {
+
+        $("#tree_with_context_menu").jstree({
+            "core" : {
+                "themes" : {
+                    "responsive": false
+                },
+                // so that create works
+                "check_callback" : true,
+                'data' : {
+                    'url' : function (node) {
+                        return 'demo/jstree_ajax_data.php';
+                    },
+                    'data' : function (node) {
+                        return { 'parent' : node.id };
+                    }
+                }
+            },
+            "types" : {
+                "default" : {
+                    "icon" : "fa fa-folder icon-state-warning icon-lg"
+                },
+                "file" : {
+                    "icon" : "fa fa-file icon-state-warning icon-lg"
+                }
+            },
+            "state" : { "key" : "demo3" },
+            "plugins" : [ "contextmenu","dnd", "state", "types" ],
+            "contextmenu": { "items": customMenu }
+
+        });
+
+    }
+
+    var customMenu = function(node) {
+
+        var tree = $('#tree_with_context_menu').jstree(true);
+
+        var items = {
+            "Create": {
+                "separator_before": false,
+                "separator_after": false,
+                "label": "Create",
+                "action": function (obj) {
+                    var $node = tree.create_node(node);
+                    tree.edit($node);
+                    console.log(node);
+                    console.log(obj);
+                }
+            },
+            "Rename": {
+                "separator_before": false,
+                "separator_after": false,
+                "label": "Rename",
+                "action": function (obj) {
+                    tree.edit(node);
+                }
+            },
+            "Edit": {
+                "separator_before": false,
+                "separator_after": false,
+                "label": "Edit",
+                "action": function (obj) {
+                    tree.edit(node);
+                }
+            },
+            "Remove": {
+                "separator_before": true,
+                "separator_after": false,
+                "label": "Remove",
+                "action": function (obj) {
+                    if(confirm('Are you sure to remove this category?')){
+                        tree.delete_node(node);
+                    }
+                }
+            },
+            "Upload": {
+                "separator_before": true,
+                "separator_after": false,
+                "label": "Upload",
+                "action": function (obj) {
+                    console.log('console');
+                }
+            }
+        };
+
+        //If node is a folder do not show the "delete" menu item
+        if ($(node).hasClass("jstree-closed") || $(node).hasClass("jstree-open")) {
+            delete items.remove;
+        }
+        if ($(node).hasClass("jstree-closed") || $(node).hasClass("jstree-open")) { //If node is a folder
+            var renameLabel = "Rename Folder";
+        }
+        else {
+            var renameLabel = "Rename File";
+        }
+
+        return items;
+    }
+
+    return {
+
+        init: function () {
+
+            ajaxTreeSample();
+
+        }
+
+    };
+
+}();
+
+jQuery(document).ready(function() {
+
+        UITree.init();
+    });
+</script>

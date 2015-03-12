@@ -1,0 +1,22 @@
+<!doctype html>	
+<html>
+<head>
+<title>Dropzone File Upload</title>
+<script src="dropzone.js"></script>
+<link href="dropzone.css" rel="stylesheet">
+</head>
+<body>
+    <p align="center">
+      DropZone File Upload
+    </p>
+    <form class="dropzone dz-clickable" action="upload.php" method="post">
+        <div class="dz-default dz-message">
+            <span>Drop files here to upload</span>
+        </div>
+    </form>
+
+    <input type="file" multiple="multiple" class="dz-hidden-input" style="visibility: hidden; position: absolute; top: 0px; left: 0px; height: 0px; width: 0px;">
+</body>
+</html>
+
+<!-- source: http://www.startutorial.com/articles/view/how-to-build-a-file-upload-form-using-dropzonejs-and-php -->

@@ -1,0 +1,28 @@
+list (multi information)
+====
+index,catalog
+
+add
+===
+create	add
+
+edit	update
+
+delete
+
+single information
+==================
+show,detail view,profile
+
+Ex:
+FAQ
+
+1. logout/template/faq.blade.php
+
+http://localhost:8000/metronic/ftfl02/templates/admin3/inbox.html
+
+User Inbox 
+&
+User Calender
+
+https://gitlab.com

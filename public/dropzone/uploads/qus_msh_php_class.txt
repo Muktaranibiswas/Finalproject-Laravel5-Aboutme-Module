@@ -1,0 +1,100 @@
+23.01.2015
+==========
+Type juggling
+
+list()
+
+regular expressions
+
+http://114.130.54.174/ftfl/www/index.php?logout=true
+
+http://www.w3.org/TR/css3-selectors/
+
+http://jqexercise.droppages.com
+=============================== 
+1. 	$("p#44.test").css("background-color","yellow");
+
+2. 	$('div#target > span').text("jQuery");
+
+3. 	var cspan = $('div#target > span').clone();
+	$('div#target > span').append(cspan);
+
+4.	
+
+24-01.2015
+==========
+http://en.uptodown.com/ubuntu/search/typing-master-full-version-download
+
+http://www.php-fig.org/psr/psr-1/
+
+complete registration form with validation PHP
+==============================================
+http://www.codemiles.com/php-examples/complete-registration-form-with-validation-t8114.html
+
+
+jquery function on w3schools 
+============================
+bind
+blur
+change
+click
+dbclick
+event.data
+event.isDefaultPrevented
+event.pageX
+event.pageY
+event.preventDefault
+event.result
+event.target
+event.timeStamp
+event.type
+event.which
+focus
+focusout
+hover
+keydown 	imp
+keypress	imp
+keyup		imp
+mousedown
+mouseenter
+mouseleave
+mousemove
+mouseout
+mouseover
+mouseup
+on
+off
+resize
+scroll
+select
+submit
+toggle
+unload
+delay
+fadeIn
+fadeOut
+fadeTo
+fadeToggle
+hide
+show
+slideDown
+slideUp
+slideToggle
+stop
+toggle
+
+home_Task
+=========
+http://jqueryui.com/accordion/
+eveyone 2 example
+
+1. Accordion
+2. autocomplete
+3. button
+4. Datepicker
+5. Dialog
+6. Menu
+
+http://jqapi.com/
+1. Attributes
+2. Selectors
